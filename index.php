@@ -68,13 +68,60 @@ var_dump(checkdate(2, 29, 2024))."<br>";
 
 $Date = "2023-03-27";
 echo date('Y-m-d', strtotime($Date. ' + 1 days'))."|";
-echo date('Y-m-d', strtotime($Date. ' + 1 months'));
+echo date('Y-m-d', strtotime($Date. ' + 1 months'))."<br><br>";
 
 ?> 
 
 
+<!--================== Comparaison des dates ================-->   
+
+    <?php
+
+$Date1 = "2023-03-27";
+$Date2 = "2023-04-01";
+
+if(strtotime($Date1)>strtotime($Date2)){
+ 
+  echo "la date 1 est plus récente";
+}else{
+ 
+    echo "la date 2 est plus récente"."<br><br>";
+}
+
+?> 
+
+<!--=== CALCUL DE NBRE DE JOURS ENTRE DEUX DATES =======-->   
+
+<?php
+
+$start = date_create('2023-03-27');
+$end = date_create('2023-04-02');
+$nbdays = date_diff($start, $end);
+echo $nbdays->format("%d")."<br><br>";
+
+?> 
   
-  
+<!--================== Comparaison des dates ================-->   
+<?php
+
+$date = '2022-06-15';
+$weekendday = date('N', strtotime($date));
+
+if ($weekendday >= 6) {
+   
+  echo 'la date est un weekend';
+
+} else {
+
+  echo "la date n'est pas un weekend";
+}
+
+?> 
+
+
+
+
+    
   
   </body>
 </html>
